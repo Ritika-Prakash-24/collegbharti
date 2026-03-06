@@ -1,0 +1,123 @@
+<form method="POST" id="mainForm" action="process_lead.php" class="needs-validation"
+              novalidate="novalidate">
+              <input type="hidden" name="form" value="pop">
+              <div class="mb-3">
+
+                <input type="text" class="form-control" minlength="3" required="" name="full_name" id="name"
+                  placeholder="Enter Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" minlength="7" required="" name="email" id="email"
+                  placeholder="Enter Email" required>
+              </div>
+              <div class="mb-4 position-relative">
+                <input type="tel" class="form-control" minlength="10" maxlength="10" name="contactno"
+                  pattern="^[6789][0-9]{9}$" id="contactno" placeholder="Contact No." required>
+                <span class="position-absolute end-0 me-2 px-2 rounded-bottom text-success"
+                  style="bottom: -13px; background-color: rgb(212, 254, 232); font-size: 10px;"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                    class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z">
+                    </path>
+                  </svg> We don't spam </span>
+              </div>
+              <div class="mb-3">
+                <select class="form-select courseData" required="" name="course" id="course">
+                  <option selected="" disabled="" value="">Select Course</option>
+                  <option value="195">Online DBA Doctorate</option>
+                  <option value="1">Online MBA</option>
+                  <option value="14">Online Executive MBA</option>
+                  <option value="65">Online Dual MBA</option>
+                  <option value="2">Online MCA</option>
+                  <option value="3">Online MCom</option>
+                  <option value="4">Online MA</option>
+                  <option value="5">Online BBA</option>
+                  <option value="6">Online BCom</option>
+                  <option value="7">Online BA</option>
+                  <option value="8">Online BCA</option>
+                </select>
+              </div>
+
+              <!-- Specialization Dropdown -->
+              <div class="mb-3" id="specializationDiv" style="display: none;">
+                <select class="form-select" name="specialization" id="specialization">
+                  <option selected="" disabled="" value="">Select Specialization</option>
+                </select>
+              </div>
+
+
+              <div class="mb-3">
+                <select class="form-select stateData" required="" name="city" id="city">
+                  <option selected="" disabled="" value="">Select State</option>
+                  <option value="2"> Uttar Pradesh </option>
+                  <option value="27"> Maharashtra </option>
+                  <option value="1"> Delhi </option>
+                  <option value="14"> Bihar </option>
+                  <option value="23"> Karnataka </option>
+                  <option value="19"> Haryana </option>
+                  <option value="6"> Rajasthan </option>
+                  <option value="18"> Gujarat </option>
+                  <option value="4"> West Bengal </option>
+                  <option value="9"> Telangana </option>
+                  <option value="22"> Jharkhand </option>
+                  <option value="26"> Madhya Pradesh </option>
+                  <option value="24"> Kerala </option>
+                  <option value="32"> Odisha </option>
+                  <option value="8"> Tamil Nadu </option>
+                  <option value="11"> Andhra Pradesh </option>
+                  <option value="5"> Punjab </option>
+                  <option value="3"> Uttarakhand </option>
+                  <option value="13"> Assam </option>
+                  <option value="15"> Chandigarh </option>
+                  <option value="7"> Sikkim </option>
+                  <option value="16"> Chhattisgarh </option>
+                  <option value="17"> Goa </option>
+                  <option value="10"> Tripura </option>
+                  <option value="12"> Arunachal Pradesh </option>
+                  <option value="20"> Himachal Pradesh </option>
+                  <option value="21"> Jammu and Kashmir </option>
+                  <option value="25"> Lakshadweep </option>
+                  <option value="29"> Meghalaya </option>
+                  <option value="28"> Manipur </option>
+                  <option value="31"> Nagaland </option>
+                  <option value="33"> Puducherry </option>
+                  <option value="30"> Mizoram </option>
+                  <option value="34"> Andaman and Nicobar Island </option>
+                  <option value="35"> Dadra and Nagar Haveli </option>
+                  <option value="36"> Daman and Diu </option>
+                  <option value="37"> Ladakh </option>
+                  <option value="42"> Other </option>
+                </select>
+              </div>
+
+              <input type="hidden" id="activity" name="activity">
+              <!-- form contet start -->
+
+              <!-- <input type="hidden" value="pop" name="from"> -->
+              <div class="text-center form_desc">
+                <div class="text-center secure-bgcolor bg-gradient d-inline-block rounded"><span
+                    class="fs-12 fw-normal px-3 text-dark"><svg stroke="currentColor" fill="currentColor"
+                      stroke-width="0" viewBox="0 0 448 512" class="lock-icon" height="1em" width="1em"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z">
+                      </path>
+                    </svg> Your personal information is secure with us</span></div>
+              </div>
+              <div class="bg-white d-flex align-items-center justify-content-center gap-1 mt-3 flex-wrap py-2 rounded"
+                style="font-size: 12px;">
+                <div class="p-avatar-group p-component">
+                  <div class="p-avatar p-component p-avatar-image p-avatar-circle"><img alt="avatar"
+                      src="images/mentor-1.png"></div>
+                  <div class="p-avatar p-component p-avatar-image p-avatar-circle"><img alt="avatar"
+                      src="images/mentor-2.png"></div>
+                  <div class="p-avatar p-component p-avatar-image p-avatar-circle"><img alt="avatar"
+                      src="images/mentor-3.png"></div>
+                </div><span>Connect with Top CV Experts</span>⭐⭐⭐⭐⭐
+              </div>
+              <div class="position-relative text-center">
+                <button type="submit" id="submitBtn" class="btn text-white btn_custom loader_btn triggerOTP">Find best
+                  University</button>
+              </div>
+            </form>
